@@ -57,7 +57,7 @@ Function.prototype.call(this, arg1, arg2);
 Write a simple function to tell whether 2 is passed as parameter or not?
 
 function() {
-  var args = Array.prototype.slice.apply(arguments)();
+  var args = Array.prototype.slice.call(arguments);
   return args.indexOf(2) !== -1;
 }
 
@@ -121,10 +121,12 @@ How could you implement cache to save calculation time for a recursive fibonacci
 
 How could you cache execution of any function?
 
-Through closure?? Like memoize?
+Through closure?? Like memoize? Yup.
 
 19 missing
 
 How could you implement moveLeft animation?
 
 How would you implement currying for any functions?
+
+Explanation: You are creating a closure that return a function. When you are curring with a new number, new number is added to the base you have provided.
