@@ -64,6 +64,18 @@ I don't know
 
 str.split('').reverse().join('');
 
+//OR
+
+var str = 'vincent';
+str = str.split('');
+
+for (var i = 0; i < str.length/2; i++) {
+  var temp = str[str.length-1-i];
+  str[str.length-1-i] = str[i];
+  str[i] = temp;
+}
+
+
 //How would you reverse words in a sentence?
 
 str.split(' ').reverse().join(' ');
