@@ -79,3 +79,30 @@ for (var i = 0; i < str.length/2; i++) {
 //How would you reverse words in a sentence?
 
 str.split(' ').reverse().join(' ');
+
+/**
+ *	Write a TR function
+ */
+ function tr(mapLetter, replaceLtr, strToModify) {
+
+   strToModify = strToModify.split('');
+
+   //create a map
+   var map = {};
+   for (var i = 0; i < mapLetter.length; i++) {
+     if (!replaceLtr[i]) {
+       map[mapLetter[i]] = mapLetter[i];
+     } else {
+       map[mapLetter[i]] = replaceLtr[i];
+     }
+   }
+
+   for (var j = 0; j < strToModify.length; j++) {
+     if (map[strToModify[j]]) {
+       strToModify[j] = map[strToModify[j]];
+     }
+   }
+
+   return strToModify.join('');
+
+ }
