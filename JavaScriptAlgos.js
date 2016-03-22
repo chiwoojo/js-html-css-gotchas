@@ -106,3 +106,10 @@ str.split(' ').reverse().join(' ');
    return strToModify.join('');
 
  }
+
+/**
+ * A function that takes a string and find the most less distant two words
+ */
+const returnLessChar = function() {
+  
+};
