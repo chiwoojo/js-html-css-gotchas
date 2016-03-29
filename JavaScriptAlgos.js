@@ -120,8 +120,8 @@ const returnLessChar = () => {
  *  @return {Boolean} True if anagrams, false if not
  */
 const checkIfAnagram = (word1, word2) => {
-  // if they are not same length, they
-  // obvious are not anagrams
+  // if they are not same length,
+  // they are not anagrams
   if (word1.length !== word2.length) {
     return false;
   }
@@ -137,12 +137,71 @@ const checkIfAnagram = (word1, word2) => {
   return word1 === word2;
 };
 
+/**
+ *  check if 2 arrays contain the
+ *  same elements.
+ *  they can ONLY contain string,
+ *  number, or more arrays
+ *  @param {array} arr1, arr2
+ *  @return {Boolean} true or false
+ */
+const arrayEquality = (arr1, arr2) => {
+  // if they are the same arrays
+  // they are equal... edge case!
+  if (arr1 === arr2) {
+    return true;
+  }
 
+  // if they don't match in length
+  // they are not considered equal...
+  // edge case!
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
 
+  // variable if a value is found
+  let same = true;
 
+  // for every element
+  for (let i = 0; i < arr1.length; i++) {
 
+    // break loop
+    // if I don't have to
+    // search anymore
+    if (!same) {
+      break;
+    }
 
+    // if the string and numbers
+    // aren't the same
+    if (arr1[i] !== arr2[i]) {
+      same = false;
+    }
 
+    // if elements in the same
+    // position in both
+    // arrays are arrays,
+    // recurse with subarrays
+    if (Array.isArray(arr1[i]) && Array.isArray(arr2[i])) {
+      same = arrayEquality(arr1[i], arr2[i]);
+    }
+  }
+
+  // return if they are same or not.
+  return same;
+};
+
+/**
+ *  Wedding.... linear extrapolation.
+ *
+ */
+
+/**
+ *  Binary tree problem with printing out
+ *  1213, where A = 1, B = 2, C = 3...Z = 26
+ *  and you have to print out all the combinations
+ *  such as 1, 21, 3 - 12, 13,... so forth
+ */
 
 
 
