@@ -104,12 +104,52 @@ str.split(' ').reverse().join(' ');
    }
 
    return strToModify.join('');
-
  }
 
 /**
  * A function that takes a string and find the most less distant two words
  */
-const returnLessChar = function() {
-  
+const returnLessChar = () => {
+
 };
+
+/**
+ *  Check if 2 words are anagrams
+ *  @param {String} word1, word2 : words that
+ *  are of the same length
+ *  @return {Boolean} True if anagrams, false if not
+ */
+const checkIfAnagram = (word1, word2) => {
+  // if they are not same length, they
+  // obvious are not anagrams
+  if (word1.length !== word2.length) {
+    return false;
+  }
+
+  // trim whitespaces, split into array
+  // sort the array by alphabet
+  // and join them back together
+  word1 = word1.trim().split('').sort().join('');
+  word2 = word2.trim().split('').sort().join('');
+
+  // if they are indeed anagrams
+  // they are equal at this point.
+  return word1 === word2;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
