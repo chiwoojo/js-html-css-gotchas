@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Testing</title>
+</head>
+<body>
+  <ul id="destoryEach">
+    <li><button id="vincent">first</button></li>
+    <li><button id="vincent2">second</button></li>
+    <li><button id="vincent3">third</button></li>
+    <li><button id="vincent4">fourth</button></li>
+  </ul>
+  <script>
+  var ul = document.getElementById("destoryEach");
+  ul.addEventListener('click', function(e) {
+    var btn = document.getElementById(e.target.id);
+    var li = btn.parentNode;
+    li.parentNode.removeChild(li);
+  });
+  </script>
+</body>
+</html>

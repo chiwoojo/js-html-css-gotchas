@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Double Button</title>
+</head>
+<body>
+
+  <div id='doubleBtn'>
+    <button>Replicate me!</button>
+  </div>
+
+  <script>
+    /**
+     *  Each time you click on a btn
+     *  it should double the number of buttons
+     *  available on the HTML
+     */
+    var numBtns = 1;
+
+    var container = document.getElementById('doubleBtn');
+    container.addEventListener('click', function(e) {
+      numBtns *= 2;
+      for ( var i = numBtns/2; i < numBtns; i++) {
+        container.innerHTML += '<button>Replicate me</button>';
+      }
+    });
+  </script>
+</body>
+</html>
